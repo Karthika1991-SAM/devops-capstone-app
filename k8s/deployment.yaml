@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-capstone
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: capstone
+  template:
+    metadata:
+      labels:
+        app: capstone
+    spec:
+      containers:
+      - name: nginx
+        image: devops-capstone:latest
+        ports:
+        - containerPort: 80
